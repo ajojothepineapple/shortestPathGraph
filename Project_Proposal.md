@@ -13,33 +13,33 @@ Since the files are in csv and txt format, they can be parsed through using File
 
 ## Graph Algorithms
 
-**Function Inputs**
+**Function Inputs:**
 We are planning to use the map discussed above as the input to all of our algorithms.
 
-**Function Outputs**
+**Function Outputs:**
 Our search tool will output the required path into the console, while our Force-Directed Graph Drawing is going to draw our output using HSLA and PNG libraries.
 
-**Function Efficiency (Target Goals)**
+**Function Efficiency (Target Goals):**
 (n=nodes, e=edges)
 Dephth-First Search: O(n) 
 Dijkstra’s Algorithm: O(e+nlog(n))
 Force-Directed Graph Drawing: O(n^3)
 
 ## Timeline
-Week 1 : 3/28 Mon
+**Week 1 : 3/28 Mon:**
 	Going through the SNAP documentation to make graphs and start on the parsing algorithm.
-Week 2 : 4/4 Mon
+**Week 2 : 4/4 Mon:**
 	Finished parsing the graphs into a map.
     Divide into two teams, where one works on the search tool and the other on the Force-Directed Graph Drawing.
-Week 3 : 4/11 Mon
+**Week 3 : 4/11 Mon:**
 	Finish the DFS Algorithm.
 	Mid-Project Checkin Due (April 15th).
-Week 4 : 4/17 Mon
+**Week 4 : 4/17 Mon:**
 	Finish the Dijkstra’s Algorithm at the start of the week
     The teams are then joined together to finish up the Force-Directed Graph Drawing by the end of the week.
-Week 5 : 4/24 Mon
+**Week 5 : 4/24 Mon:**
     The aim is to get everything done before this week, but in case there is more work than we predicted, this will gives us some breathing room.
 
-April 29th Final Project due 
+April 29th: Final Project due date. 
 
 
