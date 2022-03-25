@@ -41,7 +41,7 @@ Force-Directed Graph Drawing: O(n^3)
 	Mid-Project Checkin Due (April 15th).
 
 **Week 4 : 4/17 Mon:**
-	Finish the Dijkstra’s Algorithm at the start of the week
+	Finish the Dijkstra’s Algorithm at the start of the week.
     The teams are then joined together to finish up the Force-Directed Graph Drawing by the end of the week.
 
 **Week 5 : 4/24 Mon:**
