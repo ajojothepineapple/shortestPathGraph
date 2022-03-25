@@ -21,8 +21,11 @@ Our search tool will output the required path into the console, while our Force-
 
 **Function Efficiency (Target Goals):**
 (n=nodes, e=edges)
-Dephth-First Search: O(n) 
+
+Depth-First Search: O(n) 
+
 Dijkstra’s Algorithm: O(e+nlog(n))
+
 Force-Directed Graph Drawing: O(n^3)
 
 ## Timeline
