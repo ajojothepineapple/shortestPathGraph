@@ -22,4 +22,4 @@ We are currently expecting each team member to contribute about 5-10 hours of wo
 **3. Conflict Resolution:**
 Disagreements between members will either be handeled by voting or addressed with the help of the team mentor. If members are habitually late or are not accomplishing their tasks without informing other tem members for their reasons we are going to try to bring the issue up on the team meeting and if it escalates then through a team mentor. Other situations of a simular nature will be handled similarly.
 
-Signed: Artem Khodachuk (artem2),Ajosh Antony (aantony3)
+Signed: Artem Khodachuk (artem2),Ajosh Antony (aantony3), Michael Garrity (garrity4), John Burns (jeburns2)
