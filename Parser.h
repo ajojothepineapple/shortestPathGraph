@@ -2,12 +2,9 @@
 #include <map>
 #include <vector>
 #include <string>
+#include "Graph.h"
 
 using namespace std;
 
-class Input_Nodes{
-    public:
-    void parse();
-    map< string, vector<string> > Inputs;
 
-};
+std::vector<Edge> testEdges;

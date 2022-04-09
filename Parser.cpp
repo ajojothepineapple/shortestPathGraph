@@ -1,12 +1,57 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <map>
 #include <vector>
 #include <string>
 #include "Parser.h"
+#include "Graph.h"
 
 using namespace std;
+/* if (nodeEdges.startNodeID == curNodeID){
+    
+} 
+*/
 
+//Edge ID,Start Node ID, End Node ID,L2 Distance
+
+void Graph::parseE(){
+    ifstream efile;
+    string ch;
+    string edgeID,startNodeID,endNodeID,L2D;
+    efile.open("OL_edges.txt");
+    getline(efile, line); //skip 1st line
+
+    Edge tempEdge = Edge();
+    while(efile){
+   //use templete var to check if " " | int | float , if(" ") go next char,
+   //...if(int) keep storing untill " ", if(float) store then do getline()
+   //... repeat until EOF
+ 
+    while(edgeID != " "){
+    getc(efile,ch);
+    strncat(&str, &ch, 100); //check if(=="\n"){go next line}
+    }
+    tempEdge.edgeID = stoi(edgeID);
+    
+    /* /
+    getline(efile,startNodeID); 
+    tempEdge.startNodeID = stoi(startNodeID);
+
+    getline(efile,endNodeID); 
+    tempEdge.endNodeID = stoi(endNodeID);
+
+    getline(efile,L2D); 
+    tempEdge.L2D = stof(L2D); //change to float
+ 
+    testEdges.push_back(tempEdge);
+    }
+    */
+
+    efile.close();
+}
+
+/*
 void Input_Nodes::parse() {
  ifstream fin;
  string line;
@@ -41,3 +86,4 @@ void Input_Nodes::parse() {
  fin.close();
 
 }
+*/
