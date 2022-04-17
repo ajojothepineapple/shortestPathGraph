@@ -1,5 +1,5 @@
 # Executable names:
-EXE = finalproj
+EXE = fproj
 TEST = test
 # Add all object files needed for compiling:
 EXE_OBJ = main.o
