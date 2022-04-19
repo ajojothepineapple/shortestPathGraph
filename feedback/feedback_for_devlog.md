@@ -11,3 +11,10 @@ Pass
 
 ### Comments
 Quickly have a working code for mid-project checkin
+
+## Week 3
+### Grade
+100%
+
+### Comments
+Please have tests ready for the algorithms implemented for the mid-project check in
