@@ -3,7 +3,13 @@
 #include <iostream>
 #include "Parser.cpp"
 #include "DFS.cpp"
+#include <math.h>
+    bool floate(float A, float B){
+    return (fabs(A - B) < .05f); // change to .0000005f for final
+}
+
 int main(){
+
     Graph g;
     g.parseE("data_E_test.txt", 9);
     
@@ -19,18 +25,18 @@ int main(){
     if (g.Edges[0].endNodeID_== 1){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Edges[0].endNodeID_<< std::endl;}
     
-    if (g.Edges[3].L2D_== 3.3){std::cout << "Pass"<< std::endl;}
-    else{std::cout << g.Edges[3].L2D_<< std::endl;}
+    if (floate(g.Edges[3].L2D_,3.3)){std::cout << "Pass"<< std::endl;}
+    else{std::cout << g.Edges[3].L2D_<<"here"<< std::endl;}
     
     g.parseN("data_N_test.txt", 8);
 
     if (g.Nodes[7].nodeID_ == 7){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Nodes[7].nodeID_<< std::endl;}
     
-    if (g.Nodes[4].x_==4.4){std::cout << "Pass"<< std::endl;}
+    if (floate(g.Edges[4].L2D_,4.4)){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Nodes[4].x_<< std::endl;}
     
-    if (g.Nodes[3].y_==3.3){std::cout << "Pass"<< std::endl;}
+    if (floate(g.Nodes[3].y_,3.3)){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Nodes[3].y_<< std::endl;}
 
     std::vector<int> traversal = g.DFS();
