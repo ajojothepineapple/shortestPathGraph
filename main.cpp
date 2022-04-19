@@ -5,7 +5,7 @@
 #include "DFS.cpp"
 #include <math.h>
     bool floate(float A, float B){
-    return (fabs(A - B) < .05f); // change to .0000005f for final
+    return (fabs(A - B) < .0000005); // change to .0000005for final
 }
 
 int main(){
@@ -67,6 +67,7 @@ int main(){
     for (unsigned int k = 0; k < traversal.size(); k++){
         if (traversal_node_check[k] != traversal[k]){
             std::cout << "Fail"<< std::endl;
+            break;
         }   
     }
     return 0;
