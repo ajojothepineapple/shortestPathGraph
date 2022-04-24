@@ -87,6 +87,7 @@ int minDistance(int dist[], bool sptSet[])
     return min_index;
 }
 
+//This one I'm not so sure about, the recursion started to confuse me
 std::vector int getPath(int parent[], int j)
 {
     std::vector int sol;
