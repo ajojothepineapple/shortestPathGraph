@@ -6,48 +6,6 @@
 #include <string>
 #include "Graph.h"
 
-/* if (nodeEdges.startNodeID == curNodeID){
-    
-} 
-*/
-
-//Edge ID,Start Node ID, End Node ID,L2 Distance
-
-// void Graph::parseE(){
-//     ifstream efile;
-//     string ch;
-//     string edgeID,startNodeID,endNodeID,L2D;
-//     efile.open("OL_edges.txt");
-//     getline(efile, line); //skip 1st line
-
-//     Edge tempEdge = Edge();
-//     while(efile){
-//    //use templete var to check if " " | int | float , if(" ") go next char,
-//    //...if(int) keep storing untill " ", if(float) store then do getline()
-//    //... repeat until EOF
- 
-//     while(edgeID != " "){
-//     getc(efile,ch);
-//     strncat(&str, &ch, 100); //check if(=="\n"){go next line}
-//     }
-//     tempEdge.edgeID = stoi(edgeID);
-    
-//     /* /
-//     getline(efile,startNodeID); 
-//     tempEdge.startNodeID = stoi(startNodeID);
-//     getline(efile,endNodeID); 
-//     tempEdge.endNodeID = stoi(endNodeID);
-//     getline(efile,L2D); 
-//     tempEdge.L2D = stof(L2D); //change to float
- 
-//     testEdges.push_back(tempEdge);
-//     }
-//     */
-
-//     efile.close();
-// }
-
-
 void Graph::parseE(std::string file, int count) {
  std::ifstream fin;
  std::string line;
@@ -70,26 +28,26 @@ void Graph::parseE(std::string file, int count) {
          else if (a==1){endNode=endNode+line.at(j);}
          else if (a==0){L2D=L2D+line.at(j);}
     }
+    if (edgeID.length() == 0){
+        std::cout<<"error: inserting empty edgeID"<<std::endl;
+        continue;
+    }
+    if (startNode.length() == 0){
+        std::cout<<"error: inserting empty startNode"<<std::endl;
+        continue;
+    }
+    if (endNode.length() == 0){
+        std::cout<<"error: inserting empty endNode"<<std::endl;
+        continue;
+    }
+    if (L2D.length() == 0){
+        std::cout<<"error: inserting empty L2D"<<std::endl;
+        continue;
+    }
     temp.edgeID_=std::stoi(edgeID);
     temp.startNodeID_=std::stoi(startNode);
     temp.endNodeID_=std::stoi(endNode);
     temp.L2D_=std::stof(L2D);
-    if (edgeID.length() == 0){
-        std::cout<<"error: inserting empty edgeID"<<std::endl;
-        break;
-    }
-    if (startNode.length() == 0){
-        std::cout<<"error: inserting empty startNode"<<std::endl;
-        break;
-    }
-    if (endNode.length() == 0){
-        std::cout<<"error: inserting empty endNode"<<std::endl;
-        break;
-    }
-    if (L2D.length() == 0){
-        std::cout<<"error: inserting empty L2D"<<std::endl;
-        break;
-    }
     Edges.push_back(temp);
     int_count++;
  }
@@ -122,21 +80,21 @@ void Graph::parseN(std::string file, int count) {
          else if (a==1){x=x+line.at(j);}
          else if (a==0){y=y+line.at(j);}
     }
-    temp.nodeID_=std::stoi(nodeID);
-    temp.x_=std::stof(x);
-    temp.y_=std::stof(y);
     if (nodeID.length() == 0){
         std::cout<<"error: inserting empty nodeID"<<std::endl;
-        break;
+        continue;
     }
     if (x.length() == 0){
         std::cout<<"error: inserting empty x coordinate"<<std::endl;
-        break;
+        continue;
     }
     if (y.length() == 0){
         std::cout<<"error: inserting empty y coordinate"<<std::endl;
-        break;
+        continue;
     }
+    temp.nodeID_=std::stoi(nodeID);
+    temp.x_=std::stof(x);
+    temp.y_=std::stof(y);
     Nodes.push_back(temp);
     int_count++;
  }

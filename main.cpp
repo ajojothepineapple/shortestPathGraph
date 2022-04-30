@@ -3,12 +3,15 @@
 #include <iostream>
 #include "Parser.cpp"
 #include "DFS.cpp"
+#include "Graphing.cpp"
 #include <math.h>
-    bool floate(float A, float B){
+bool floate(float A, float B){
     return (fabs(A - B) < .0000005); // change to .0000005for final
 }
-
 int main(){
+    Graph e;
+    e.parseE("data_E_test_empty.txt", 5);
+    e.parseN("data_N_test_empty.txt", 5);
 
     Graph g;
     g.parseE("data_E_test.txt", 9);
@@ -25,18 +28,18 @@ int main(){
     if (g.Edges[0].endNodeID_== 1){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Edges[0].endNodeID_<< std::endl;}
     
-    if (floate(g.Edges[3].L2D_,3.3)){std::cout << "Pass"<< std::endl;}
-    else{std::cout << g.Edges[3].L2D_<<"here"<< std::endl;}
+    if (g.Edges[3].L2D_== 3){std::cout << "Pass"<< std::endl;}
+    else{std::cout << g.Edges[3].L2D_<< std::endl;}
     
     g.parseN("data_N_test.txt", 8);
 
     if (g.Nodes[7].nodeID_ == 7){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Nodes[7].nodeID_<< std::endl;}
     
-    if (floate(g.Edges[4].L2D_,4.4)){std::cout << "Pass"<< std::endl;}
+    if (g.Nodes[4].x_==4){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Nodes[4].x_<< std::endl;}
     
-    if (floate(g.Nodes[3].y_,3.3)){std::cout << "Pass"<< std::endl;}
+    if (g.Nodes[3].y_==3){std::cout << "Pass"<< std::endl;}
     else{std::cout << g.Nodes[3].y_<< std::endl;}
 
     std::vector<int> traversal = g.DFS();
@@ -67,8 +70,28 @@ int main(){
     for (unsigned int k = 0; k < traversal.size(); k++){
         if (traversal_node_check[k] != traversal[k]){
             std::cout << "Fail"<< std::endl;
-            break;
         }   
     }
+    Graph k;
+    k.parseE("data_E_test_2.txt", 32); 
+    k.parseN("data_N_test_2.txt", 17); 
+    k.Graphing(30, 30, "output_test.png");
+
+    std::vector<int> graphing_path_node_check;
+    graphing_path_node_check.push_back(0);
+    graphing_path_node_check.push_back(1);
+    graphing_path_node_check.push_back(9);
+    graphing_path_node_check.push_back(0);
+    graphing_path_node_check.push_back(4);
+    graphing_path_node_check.push_back(16);
+    graphing_path_node_check.push_back(7);
+    graphing_path_node_check.push_back(0);
+    k.Graphing_With_Path(graphing_path_node_check, "output_test_path.png");
+    
+    Graph l;
+    l.parseE("data_E.txt", 7035); 
+    l.parseN("data_N.txt", 6105); 
+    l.Graphing(10001, 10001, "output.png");
+
     return 0;
 }
