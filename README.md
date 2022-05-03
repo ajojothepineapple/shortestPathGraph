@@ -1,6 +1,6 @@
 # Readme
 
-**Files and Deliverables Organisation**
+**Files and Deliverables Organisation:**
 
 The header file for the project: Graph.h
 
@@ -28,7 +28,8 @@ Weekly Progress Log: Weekly_Progress_Log.md
 
 Final Report: results.md
 
-**Running the Code**
+**Running the Code:**
+
 To run the tests in main.cpp:
   - To compile type "main" in the command line.
   - Then to run type "./finalproj" in the command line.
