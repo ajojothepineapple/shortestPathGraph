@@ -9,40 +9,53 @@ class Node{             //Class that contains the information about the node (co
     int nodeID_;        
     int x_;
     int y_;
-    Node(){
-
-    }
 };
 
 
 class Edge{                 //Class that contains the information about the edge (ID, the two nodes that are connected and length (not used, but is part of the data set))
-
     public:
     int edgeID_;            
     int startNodeID_;
     int endNodeID_;
     int L2D_;
-    Edge(){
-        
-    }
 };
 
 class Graph{ 
-    public: 
+    public:
+    /*
+    Parses the information from the file into the variable, which contains the edges of graph.
+    Inputs: File to be parsed and number of edges.
+    Outputs: Edges of the graph inside the variable Edges.
+    */ 
     void parseE(std::string file, int count);
+    /*
+    Parses the information from the file into the variable, which contains the nodes of graph.
+    Inputs: File to be parsed and number of nodes.
+    Outputs: Nodes of the graph inside the variable Nodes.
+    */
     void parseN(std::string file, int count);
     /*
-    Carries out DFS traversal on the given graph, which uses Nodes and Edges of the graph. Returns a vector, which contains the nodes in the order of the DFS traversal.
+    Carries out DFS traversal on the given graph.
+    Inputs: Nodes and Edges of the graph.
+    Outputs: Vector in the order of the DFS traversal.
     */
     std::vector<int> DFS();
     /*
     Helper function for the DFS traversal.
     */
     void DFS_help(int current_node);
+    /*
+    The following function paints the nodes and edges on the map based on the nodes' positions.
+    Input: X and Y dimensions of the painting (Set based on the coordinate limits of the dataset) and the filename of the PNG file to which the output is written
+    Output: PNG file with graphical representation of the output
+    */
     void Graphing(unsigned int x_size, unsigned int y_size, std::string filename);
+    /*
+    The following function paints the traversal path based on the nodes given to it in blue on the map that was painted by Graphing function above, so the said function should be ran before this one.
+    Input: Vector of nodes, that have to be connected and the filename to which the output is written to.
+    Output: PNG file with graphical representation of the path
+    */
     void Graphing_With_Path(std::vector<int> nodes_to_connect, std::string filename);
-    std::vector<bool> Edges_Discovery_Check;
-    std::vector<bool> Edges_Back_Check;
     std::vector<bool> Nodes_Visited_Check;
     std::vector<Edge> Edges;
     std::vector<Node> Nodes;
