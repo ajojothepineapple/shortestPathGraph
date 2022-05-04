@@ -96,7 +96,7 @@ void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filen
 }
 /*
     The following function paints the traversal path based on the nodes given to it in blue on the map that was painted by Graphing function above, so the said function should be ran before this one.
-    Input: Vector of nodes, that have to be connected and the filename to which the output is written to.
+    Input: Vector of nodes, that have to be connected, filename to which the output is written to, Nodes and Edges of the graph.
     Output: PNG file with graphical representation of the path
 */
 void Graph::Graphing_With_Path(std::vector<int> nodes_to_connect, std::string filename){
