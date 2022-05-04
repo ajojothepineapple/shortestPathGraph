@@ -38,7 +38,7 @@ To run finding shortest path and graphically outputting it to the wanted file:
   - To compile type "" in the command line.
   - Then to run type "" in the command line.
 
-**Description of tests**
+**Description of tests:**
 
 **Data Correction and Error Detection** (Uses "data_E_test_empty.txt" and "data_N_test_empty.txt" files as inputs)
 
