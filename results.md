@@ -33,7 +33,7 @@ DFS Traversal (Uses "data_E_test.txt" and "data_N_test.txt")
 
 - Test 13: Looking at the dataset for the test the traversal should be in the following order (By NodeIDs): 0-1-2-3-4-7-5-6. If that is not the case then the test prints out "Fail"
 
-Graphing Algorithm tests (Uses "data_E_test_2.txt" and "data_N_test_2.txt")
+Graphing Algorithm (Uses "data_E_test_2.txt" and "data_N_test_2.txt")
 
 - Test 14: Should basically paint a "wheel" graph where there is a node in the middle of the picture, which connects to all the other nodes, which are connected in the cycle. The output is written to "output_test.png" and needs visual confirmation as a test.
 
