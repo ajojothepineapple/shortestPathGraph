@@ -1,5 +1,30 @@
 # Results 
 
+**Primary methods we wated to develop**
+DFS traversal:
+
+- Inputs: Nodes and Edges of the graph.
+
+- Outputs: Vector of the DFS traversal in the order of the traversal.
+
+Dijkstra's Algorithm:
+
+- Inputs:
+
+- Outputs:
+
+Graphing:
+
+- Inputs: X and Y dimensions for the graphing, filename of the file to which the output is written, Nodes and Edges of the graph.
+
+- Output: PNG with the graphical map, where nodes are green and the roads are red. 
+
+Graphing with Path:
+
+- Inputs: vector of nodes on the path, filename of the file to which the output is written, Nodes and Edges of the graph and graphical information from the Graphing function.
+
+- Output: PNG with the path highligted in blue on the map done by graphing.
+
 **Unit tests in main.cpp**
 (Tests are labeled in main.cpp)
 
@@ -50,3 +75,7 @@ Graphing Algorithm (Uses "data_E_test_2.txt" and "data_N_test_2.txt")
 **Answers to the leading questions**
 
 - We believe we have achieved our aim as our algorithm does output the requred path provided by the Djikstra's algorithm correctly according to the tests and Djikstra's algorithm can output the correct path if we output the path to the console.
+
+- We are also able to graphically represent out nodes and edges and if are able to highlight the path on the graphed map as well.
+
+- We are also able to run DFS traversal on our algorithm, which can output of vector of nodes by their IDs if needed. 
