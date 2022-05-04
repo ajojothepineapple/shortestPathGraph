@@ -50,7 +50,7 @@ void Graph::parseE(std::string file, int count) {
     temp.edgeID_=std::stoi(edgeID);                                     //Otherwise insert the variables into the Edges vector and increment the number of entries inserted. 
     temp.startNodeID_=std::stoi(startNode);
     temp.endNodeID_=std::stoi(endNode);
-    temp.L2D_=std::stof(L2D);
+    temp.L2D_=std::stoi(L2D);
     Edges.push_back(temp);
     int_count++;
  }
