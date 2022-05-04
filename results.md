@@ -1,6 +1,7 @@
 # Results 
 
 **Primary methods we wated to develop**
+
 DFS traversal:
 
 - Inputs: Nodes and Edges of the graph.
