@@ -49,4 +49,4 @@ Graphing Algorithm tests (Uses "data_E_test_2.txt" and "data_N_test_2.txt")
 
 **Answers to the leading questions**
 
-- I believe we have achieved our aim as our algorithm does output the requred path provided by the Djikstra's algorithm correctly according to the tests and Djikstra's algorithm can output the correct path if we output the path to the console.
+- We believe we have achieved our aim as our algorithm does output the requred path provided by the Djikstra's algorithm correctly according to the tests and Djikstra's algorithm can output the correct path if we output the path to the console.
