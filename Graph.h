@@ -12,7 +12,7 @@ class Node{             //Class that contains the information about the node (co
 };
 
 
-class Edge{                 //Class that contains the information about the edge (ID, the two nodes that are connected and length (not used, but is part of the data set))
+class Edge{                 //Class that contains the information about the edge (ID, the two nodes that are connected and length)
     public:
     int edgeID_;            
     int startNodeID_;

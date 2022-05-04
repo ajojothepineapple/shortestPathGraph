@@ -20,7 +20,7 @@ void Graph::parseE(std::string file, int count) {
      int a = 3;
      char comp = ' ';
      Edge temp;
-     std::string edgeID="", startNode="", endNode="", L2D="";   //Since the information in the file is stored in the order EdgeID, Start Node, End Node and Distance(The last one is not used by us)
+     std::string edgeID="", startNode="", endNode="", L2D="";   //Since the information in the file is stored in the order EdgeID, Start Node, End Node and Distance
      getline(fin, line);                                        //and separated by the spaces we separae each element of the line string into the corresponding variables, by
      for (unsigned int j = 0; j < line.length(); j++){          //putting the chracters into the next corresponding variable when the space is seen.
          if (comp==line.at(j)){
