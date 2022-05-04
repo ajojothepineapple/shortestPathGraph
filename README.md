@@ -14,7 +14,7 @@ Code for the graphing algorithm: Graphing.cpp
 
 Code that contains the tests for the algorithms: main.cpp
 
-Input files used in the tests (see results.md for more detail): data_E_test.txt, data_E_test_2.txt, data_E_test_empty.txt, data_N_test.txt, data_N_test_2.txt, data_N_test_empty.txt  
+Input files used in the tests: data_E_test.txt, data_E_test_2.txt, data_E_test_empty.txt, data_N_test.txt, data_N_test_2.txt, data_N_test_empty.txt  
 
 Output files used in the tests (see results.md for more detail): output_test.png, output_test_path.png
 
@@ -54,13 +54,13 @@ Test 5: Testing whether the information for the EdgeID is correct for one of the
 
 Test 6: Testing whether the information for the End Node is correct for one of the Edges. If correct will output "Pass", if not will output the what is inserted in that data field for that Edge.
 
-Test 7: Testing whether the information for the L2D (Distance, which is not used in the project) is correct for one of the Edges. If correct will output "Pass", if not will output the what is inserted in that data field for that Edge.
+Test 7: Testing whether the information for the L2D is correct for one of the Edges. If correct will output "Pass", if not will output the what is inserted in that data field for that Edge.
 
-Test 8: Testing whether the information for the NodeID is correct for one of the Nodes. If correct will output "Pass", if not will output the what is inserted in that data field for that Edge.
+Test 8: Testing whether the information for the NodeID is correct for one of the Nodes. If correct will output "Pass", if not will output the what is inserted in that data field for that Node.
 
-Test 9: Testing whether the information for the x coordinates is correct for one of the Nodes. If correct will output "Pass", if not will output the what is inserted in that data field for that Edge.
+Test 9: Testing whether the information for the x coordinates is correct for one of the Nodes. If correct will output "Pass", if not will output the what is inserted in that data field for that Node.
 
-Test 10: Testing whether the information for the y coordinates is correct for one of the Nodes. If correct will output "Pass", if not will output the what is inserted in that data field for that Edge.
+Test 10: Testing whether the information for the y coordinates is correct for one of the Nodes. If correct will output "Pass", if not will output the what is inserted in that data field for that Node.
 
 **DFS Traversal** (Uses "data_E_test.txt" and "data_N_test.txt")
 
