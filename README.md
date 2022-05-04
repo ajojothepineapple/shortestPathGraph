@@ -30,7 +30,7 @@ Final Report: results.md
 
 **Running the Code:**
 
-To run the tests and the target the algorithms on the target dataset in main.cpp:
+To run the tests and the algorithms on the target dataset in main.cpp:
   - To compile type "main" in the command line.
   - Then to run type "./finalproj" in the command line.
 
