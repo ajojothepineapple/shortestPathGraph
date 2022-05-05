@@ -4,6 +4,7 @@
 #include "Parser.cpp"
 #include "DFS.cpp"
 #include "Graphing.cpp"
+#include "dijkstra.cpp"
 //More details about the tests in the results.md
 int main(){
     Graph e;                                        //Tests for Data Correction and Error Detection
@@ -99,7 +100,18 @@ int main(){
     std::cout<<DFS_vector[7]<<std::endl;
     std::cout<<DFS_vector[8]<<std::endl;
     std::cout<<DFS_vector[9]<<std::endl;
-    l.Graphing(10001, 10001, "output.png");                                 //Graphing algorithm on the target dataset
+    //l.Graphing(10001, 10001, "output.png");                                 //Graphing algorithm on the target dataset
+
+    
+    l.adjbuilder();
+   /* for(size_t i = 0; i < 10; i++){
+        for(size_t j = 0; j < 10; j++){
+            std::cout<< l.graph[i][j] << " ";
+        }
+        std::cout<<"\n";
+    }*/
+    std::vector<int> testvector = l.dijkstra(0,1000);
+    std::cout<<l.dist_<<std::endl;
 
     return 0;
 }
