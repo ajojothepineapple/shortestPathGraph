@@ -30,7 +30,7 @@ intended to be used with a graph stored as an adjacency matrix:
 //V is the number of vertices in the graph. 
 //Define V as a global variable and initialize it in parser.
 
-std::vector<int> Graph::dijkstra(std::vector<std::vector<float>> graph, int root, int dest){
+std::vector<int> Graph::dijkstra(int root, int dest){
 
 int V_ = graph.size();
 int V= V_;
@@ -46,9 +46,9 @@ std::vector<int> solution;
 
 std::vector<bool> sptSet = {false};
 sptSet.resize(V);
-for(size_t i = 0; i < sptSet.size(); i++){
+/*for(size_t i = 0; i < sptSet.size(); i++){
     std::cout<<sptSet[i] << std::endl;
-}
+}*/
 
 for(int i = 0; i<V; i++){
 dist[i] = 2147483647.0; 
