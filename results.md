@@ -1,12 +1,32 @@
 # Results 
 
-**Primary methods we wated to develop**
+**Primary methods we wanted and needed to develop**
 
-DFS traversal:
+(n - Nodes; m - Edges)
+
+Parsing edges (parseE) (Parses the Edges information from the file into the variable Edges of the Graph):
+
+- Inputs: File to be parsed and number of edges.
+
+- Outputs: Edges of the graph inside the variable Edges.
+
+- Running Time: O(m), the traversal is done line by line where each line contains the information about the edge.
+
+Parsing nodes (parseN) (Parses the Nodes information from the file into the variable Nodes of the Graph):
+
+- Inputs: File to be parsed and number of nodes.
+
+- Outputs: Nodes of the graph inside the variable Nodes.
+
+- Running Time: O(n), the traversal is done line by line where each line contains the information about the n.ode
+
+DFS traversal (Traverses the graphs according to the principles of the Depth - First Search):
 
 - Inputs: Nodes and Edges of the graph.
 
 - Outputs: Vector of the DFS traversal in the order of the traversal.
+
+- Running Time: O(n * m) Because there are N DFS recursive calls for every node inside the function and inside every recursive call the entire Edge List has to be traversed to find the adjacent nodes.
 
 Dijkstra's Algorithm:
 
@@ -14,17 +34,23 @@ Dijkstra's Algorithm:
 
 - Outputs:
 
+- Running Time: 
+
 Graphing:
 
 - Inputs: X and Y dimensions for the graphing, filename of the file to which the output is written, Nodes and Edges of the graph.
 
-- Output: PNG with the graphical map, where nodes are green and the roads are red. 
+- Output: PNG with the graphical map, where nodes are green and the roads are red.
+
+- Running Time: (x = x-dimension of the picture, y = y-dimension of the picture) O(m * sqrt(x^2+y^2) + n), as for every edge the largest distance that can be drawn is between is from one corner of the picture to the other, which is the diagonal of the pictrue denoted by x and y dimensions and every node is drawn separetely from the edges.
 
 Graphing with Path:
 
 - Inputs: vector of nodes on the path, filename of the file to which the output is written, Nodes and Edges of the graph and graphical information from the Graphing function.
 
 - Output: PNG with the path highligted in blue on the map done by graphing.
+
+- Running Time: (x = x-dimension of the picture, y = y-dimension of the picture) O(m * sqrt(x^2+y^2) + n), as for every edge might be included in the path and for every edge the largest distance that can be drawn is between is from one corner of the picture to the other, which is the diagonal of the pictrue denoted by x and y dimensions and every node is repainted again as it might be ovewritten when painting the paths.
 
 **Unit tests in main.cpp**
 (Tests are labeled in main.cpp)
