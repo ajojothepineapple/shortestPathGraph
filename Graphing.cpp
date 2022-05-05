@@ -9,6 +9,8 @@
 */
 void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filename){
     cs225::PNG output(x_size, y_size);
+    x_size_=x_size;
+    y_size_=y_size;
     for (unsigned int j = 0; j < Edges.size(); j++){        //For every edge of the graph.
         Node Node_1 = Nodes[Edges[j].startNodeID_];         //Find the nodes and calculate their distances between each other in x and y dimensions.
         Node Node_2 = Nodes[Edges[j].endNodeID_];
@@ -30,15 +32,17 @@ void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filen
         }
         if (dist_x==0){                                                         //If distance x is 0, only consider distance y and paint the corresponding vertical line in red.
             for (int k=0; k < abs(dist_y); k++){
-                cs225::HSLAPixel & pixel = output.getPixel(curr_x, curr_y);
-                pixel = cs225::HSLAPixel(0, 1, 0.5);
+                output.getPixel(curr_x, curr_y) = cs225::HSLAPixel(0, 0, 0);
+                output.getPixel(curr_x+1, curr_y) = cs225::HSLAPixel(0, 0, 0);
+                output.getPixel(curr_x-1, curr_y) = cs225::HSLAPixel(0, 0, 0);
                 curr_y=curr_y+b;
             }
         }
         else if (dist_y==0){
             for (int k=0; k < abs(dist_x); k++){                                //If distance y is 0, only consider distance y and paint the corresponding horizontal line in red.
-                cs225::HSLAPixel & pixel = output.getPixel(curr_x, curr_y);
-                pixel = cs225::HSLAPixel(0, 1, 0.5);
+                output.getPixel(curr_x, curr_y)=cs225::HSLAPixel(0, 0, 0);
+                output.getPixel(curr_x, curr_y+1)=cs225::HSLAPixel(0, 0, 0);
+                output.getPixel(curr_x, curr_y-1)=cs225::HSLAPixel(0, 0, 0);
                 curr_x=curr_x+a;
             }
         }
@@ -51,9 +55,10 @@ void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filen
                     if (curr_x==Node_2.x_){                                     //This is done to make the edges seem diagonal on the picture.
                        break; 
                     }
-                    cs225::HSLAPixel & pixel = output.getPixel(curr_x, curr_y);
+                    output.getPixel(curr_x, curr_y) = cs225::HSLAPixel(0, 0, 0);
                     curr_x=curr_x+a;
-                    pixel = cs225::HSLAPixel(0, 1, 0.5);
+                    output.getPixel(curr_x, curr_y-1)=cs225::HSLAPixel(0, 0, 0);
+                    output.getPixel(curr_x, curr_y+1)=cs225::HSLAPixel(0, 0, 0);
                 }
                 if (curr_x==Node_2.x_ && curr_y==Node_2.y_){                    //If the coordinate of the Node 2 was reached stop painting.
                     break;
@@ -71,9 +76,10 @@ void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filen
                     if (curr_y==Node_2.y_){
                        break; 
                     }
-                    cs225::HSLAPixel & pixel = output.getPixel(curr_x, curr_y);
+                    output.getPixel(curr_x, curr_y) = cs225::HSLAPixel(0, 0, 0);
                     curr_y=curr_y+b;
-                    pixel = cs225::HSLAPixel(0, 1, 0.5);
+                   output.getPixel(curr_x+1, curr_y)=cs225::HSLAPixel(0, 0, 0);
+                    output.getPixel(curr_x-1, curr_y)=cs225::HSLAPixel(0, 0, 0);
                 }
                 if (curr_x==Node_2.x_ && curr_y==Node_2.y_){                            //If the coordinate of the Node 2 was reached stop painting.
                     break;
@@ -136,15 +142,17 @@ void Graph::Graphing_With_Path(std::vector<int> nodes_to_connect, std::string fi
         }
         if (dist_x==0){                                                         //If distance x is 0, only consider distance y and paint the corresponding vertical line in blue.
             for (int k=0; k < abs(dist_y); k++){
-                cs225::HSLAPixel & pixel = output_.getPixel(curr_x, curr_y);
-                pixel = cs225::HSLAPixel(240, 1, 0.5);
+                output_.getPixel(curr_x, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
+                output_.getPixel(curr_x+1, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
+                output_.getPixel(curr_x-1, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
                 curr_y=curr_y+b;
             }
         }
         else if (dist_y==0){
             for (int k=0; k < abs(dist_x); k++){                                //If distance y is 0, only consider distance y and paint the corresponding horizontal line in red.
-                cs225::HSLAPixel & pixel = output_.getPixel(curr_x, curr_y);
-                pixel = cs225::HSLAPixel(240, 1, 0.5);
+                output_.getPixel(curr_x, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
+                output_.getPixel(curr_x, curr_y+1)=cs225::HSLAPixel(0, 1, 0.5);
+               output_.getPixel(curr_x, curr_y-1)=cs225::HSLAPixel(0, 1, 0.5);
                 curr_x=curr_x+a;
             }
         }
@@ -157,9 +165,10 @@ void Graph::Graphing_With_Path(std::vector<int> nodes_to_connect, std::string fi
                     if (curr_x==Node_2.x_){                                         //This is done to make the edges seem diagonal on the picture.
                        break; 
                     }
-                    cs225::HSLAPixel & pixel = output_.getPixel(curr_x, curr_y);
+                    output_.getPixel(curr_x, curr_y) = cs225::HSLAPixel(0, 1, 0.5);
                     curr_x=curr_x+a;
-                    pixel = cs225::HSLAPixel(240, 1, 0.5);
+                    output_.getPixel(curr_x, curr_y+1)=cs225::HSLAPixel(0, 1, 0.5);
+                   output_.getPixel(curr_x, curr_y-1)=cs225::HSLAPixel(0, 1, 0.5);
                 }
                 if (curr_x==Node_2.x_ && curr_y==Node_2.y_){                         //If the coordinate of the Node 2 was reached stop painting.
                     break;
@@ -177,9 +186,10 @@ void Graph::Graphing_With_Path(std::vector<int> nodes_to_connect, std::string fi
                     if (curr_y==Node_2.y_){                                             //Paint the corresponding amount of pixels in the y direction in blue until it reaches the corresponding coordinate of Node 2 from Node 1 based on the direction desided beforehand.
                        break; 
                     }
-                    cs225::HSLAPixel & pixel = output_.getPixel(curr_x, curr_y);
+                    output_.getPixel(curr_x, curr_y) = cs225::HSLAPixel(0, 1, 0.5);
                     curr_y=curr_y+b;
-                    pixel = cs225::HSLAPixel(240, 1, 0.5);
+                    output_.getPixel(curr_x+1, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
+                    output_.getPixel(curr_x-1, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
                 }
                 if (curr_x==Node_2.x_ && curr_y==Node_2.y_){                            //If the coordinate of the Node 2 was reached stop painting.
                     break;

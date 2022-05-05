@@ -110,4 +110,27 @@ void Graph::parseN(std::string file, int count) {
  if (int_count != count){                                       //If the amount of entries passed does not match with the count given print an error message.
      std::cout<<"error: not matching data size"<<std::endl;
  }
+
 }
+
+void Graph::adjbuilder(){
+    graph.clear();
+    graph.resize(Nodes.size(), std::vector<int>(Nodes.size()));
+    for(size_t i = 0; i < Nodes.size(); i++){
+        for(size_t j = 0; j < Nodes.size(); j++){
+            if (i==j){
+                graph[i][j] = 0;
+            }
+            else{
+                graph[i][j] = 1147483647;
+            }
+        }
+    }
+    for(size_t i = 0; i<Edges.size(); i++){
+        int startidx = Edges[i].startNodeID_;
+        int endidx = Edges[i].endNodeID_;
+        graph[startidx][endidx] = Edges[i].L2D_;
+        graph[endidx][startidx] = Edges[i].L2D_;
+        
+    }
+    }

@@ -60,7 +60,15 @@ class Graph{
     std::vector<Edge> Edges;
     std::vector<Node> Nodes;
     std::vector<int> Traversal;
+    unsigned int x_size_;
+    unsigned int y_size_;
     cs225::PNG output_;
+    std::vector<std::vector<int>> graph;
+   void adjbuilder();
+
+    std::vector<int> dijkstra(int root, int dest);
+    int minDistance(std::vector<int> dist, std::vector<bool> sptSet, int V);
+    void getPath(std::vector<int> &parent, int j, std::vector<int> &path);
+    int dist_;
 
 };
-
