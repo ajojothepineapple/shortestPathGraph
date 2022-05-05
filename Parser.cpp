@@ -115,14 +115,14 @@ void Graph::parseN(std::string file, int count) {
 
 void Graph::adjbuilder(){
     graph.clear();
-    graph.resize(Nodes.size(), std::vector<float>(Nodes.size()));
+    graph.resize(Nodes.size(), std::vector<int>(Nodes.size()));
     for(size_t i = 0; i < Nodes.size(); i++){
         for(size_t j = 0; j < Nodes.size(); j++){
             if (i==j){
                 graph[i][j] = 0;
             }
             else{
-                graph[i][j] = 2147483647.0;
+                graph[i][j] = 1147483647;
             }
         }
     }
@@ -134,4 +134,3 @@ void Graph::adjbuilder(){
         
     }
     }
-

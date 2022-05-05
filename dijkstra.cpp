@@ -35,11 +35,11 @@ std::vector<int> Graph::dijkstra(int root, int dest){
 int V_ = graph.size();
 int V= V_;
 std::vector<int> parent; //contains the indices of the nodes on the shortest path
-parent.push_back(-1);
-for(int i=0; i<V-1; i++){
+for(int i=0; i<V; i++){
     parent.push_back(0);
 }
-std::vector<float> dist; //holds the shortest distance from root to i. dist[dest] is what we are looking for
+parent[root] = -1;
+std::vector<int> dist; //holds the shortest distance from root to i. dist[dest] is what we are looking for
 dist.resize(V);
 std::vector<int> solution;
 
@@ -51,7 +51,7 @@ sptSet.resize(V);
 }*/
 
 for(int i = 0; i<V; i++){
-dist[i] = 2147483647.0; 
+dist[i] = 2147483647; 
 }
 
 dist[root] = 0;
@@ -88,11 +88,11 @@ return solution;
 }
 
 
-int Graph::minDistance(std::vector<float> dist, std::vector<bool> sptSet, int V)
+int Graph::minDistance(std::vector<int> dist, std::vector<bool> sptSet, int V)
 {
    
    // Initialize min value
-    float min = 2147483647.0;
+    int min = 1147483647;
     int min_index = 0;
     for (int v = 0; v < V; v++)
         if (sptSet[v] == false && dist[v] <= min){
@@ -106,6 +106,7 @@ int Graph::minDistance(std::vector<float> dist, std::vector<bool> sptSet, int V)
 //This one I'm not so sure about, the recursion started to confuse me
 void Graph::getPath(std::vector<int> &parent, int j, std::vector<int> &path)
 {
+     //std::cout<<j<< " " << parent.size()<< std::endl;
      // Base Case : If j is source
     if (parent[j] == -1)
         return;
