@@ -53,7 +53,7 @@ Test 1: Checking whether the data size does not match by passing a file with les
 
 Test 2: Test: Checking whether leaving some information fields for certain nodes empty is picked up by the algorithm. If correct should print two statements of "error: inserting empty y coordinate" and one statement of "error: not matching data size" as those entries are skipped, based on the input of data.
 
-**Data Correction** (Uses "data_E_test.txt" and "data_N_test.txt")
+**Data Correctness** (Uses "data_E_test.txt" and "data_N_test.txt")
 
 Test 3/4: Testing whether the information for the Start Node is correct for one of the Edges. If correct will output "Pass", if not will output the what is inserted in that data field for that Edge.
 
