@@ -111,7 +111,7 @@ std::cout << "Your filename is: " << x; // Display the input value
     Graph k;                                                                //Tests for the graphing algorithm
     k.parseE("data_E_test_2.txt", 32);                                      //Test 14
     k.parseN("data_N_test_2.txt", 17); 
-    k.Graphing(30, 30, "output_test.png");
+    k.Graphing(70, 70, "output_test.png");
 
     std::vector<int> graphing_path_node_check;                              //Test 15
     graphing_path_node_check.push_back(0);
