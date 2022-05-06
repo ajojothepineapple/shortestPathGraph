@@ -1,5 +1,5 @@
 # README
-**WARNING: The EWS is only able to run the tests we have provided, in order to run the code on the full dataset, docker memory has to be increased to 7.00 GB**
+**WARNING: The EWS is only able to run the tests we have provided or smaller datasets, in order to run the code on the full dataset, docker memory has to be increased to 7.00 GB**
 
 **Files and Deliverables Organisation:**
 
