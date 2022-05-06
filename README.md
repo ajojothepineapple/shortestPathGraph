@@ -129,9 +129,9 @@ Test 9: Testing whether the information for the y coordinates is correct for one
 
 Test 10: Checks for the correct number of nodes for the traversal. If incorrect, the Catch test will display the value that is there instead on the left of the equals sign.
 
-Test 11: Checks whether any of the nodes are repeating in the traversal. If that is the case, then the function prints fail.
+Test 11: Checks whether any of the nodes are repeating in the traversal. If that is the case, then the function fails.
 
-Test 12: Looking at the dataset for the test the traversal should be in the following order (By NodeIDs): 0-1-2-3-4-7-5-6. If that is not the case then the test prints out "Fail"
+Test 12: Looking at the dataset for the test the traversal should be in the following order (By NodeIDs): 0-1-2-3-4-7-5-6. If that is not the case then the test will fail.
 
 **Graphing Algorithm** (Uses "data_E_test_2.txt" and "data_N_test_2.txt")
 
