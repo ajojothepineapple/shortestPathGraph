@@ -31,12 +31,16 @@ Final Report: results.md
 **Running the Code:**
 
 To run the tests and the algorithms on the target dataset in main.cpp:
-  - To compile type "main" in the command line.
-  - Then to run type "./finalproj" in the command line.
+  - To compile type make program in the command line.
+  - Then to run type "./program" to run all the functions in the command line.
 
 To run finding shortest path and graphically outputting it to the wanted file:
-  - To compile type "" in the command line.
-  - Then to run type "" in the command line.
+  - To compile type make program in the command line.
+  - Then to run type "./program "dik any""in the command line. Note: to run full need 7 GB mem allocation in Docker
+  - You will then get the following prompts (to run the target data type the following in []):
+  - Type Edge file name: [data_E.txt]
+  - Type Edge number: [7035]
+  - 
 
 **Description of tests:**
 
