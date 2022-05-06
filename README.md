@@ -33,17 +33,69 @@ Presentation Video: https://drive.google.com/file/d/1BaJNhO074RKAKUmLzznXtnjNh0g
 
 **Running the Code:**
 
-To run the tests and the algorithms on the target dataset in main.cpp:
-  - To compile type make program in the command line.
-  - Then to run type "./program" to run all the functions in the command line.
+First compile the program, using command line by running: make program
 
-To run finding shortest path and graphically outputting it to the wanted file:
-  - To compile type make program in the command line.
-  - Then to run type "./program "dik any""in the command line.
-  - You will then get the following prompts (to run the target data type the following in []):
-  - Type Edge file name: [data_E.txt]
-  - Type Edge number: [7035]
-  - 
+Tests:
+
+- To run Tests 1 and 2, using command line type: ./program "Data Correction and Error Detection Tests"
+
+- To run Tests 3, 4, 5 and 6, using command line type: ./program "Data Correctness Test Pt 1"
+
+- To run Tests 7, 8 and 9, using command line type: ./program "Data Correctness Test Pt 2"
+
+- To run Tests 10 and 11, using command line type: ./program "DFS Traversal Size Test"
+
+- To run Tests 12, using command line type: ./program "DFS Traversal Node Order Test"
+
+- To run Tests 12 and 14, using command line type: ./program "Graphing Algorithm Test"
+
+Running algorithms for general use (the target dataset is in data_E.txt (Edges) and data_N.txt (Nodes)):
+
+To run DFS on any data (prints the traversal to the console), using command line type: ./program "Run DFS". There will then be a prompt to input the following information:
+
+- File with edge information.
+
+- Number of edges.
+
+- File with node information.
+
+- Number of nodes.
+
+To run Graphing on any data (outpust the png file with a drawing), using command line type: ./program "Graph Map". There will then be a prompt to input the following information:
+
+- File with edge information.
+
+- Number of edges.
+
+- File with node information.
+
+- Number of nodes.
+
+- Max x coordinate.
+
+- Max y coordinate.
+
+- Output filename.
+
+To run Graphing with Dijkstra's Algorithm on any data (Prints the path to the console in terms of nodes and paints the path on the map), using command line type: ./program "Graph Map". There will then be a prompt to input the following information:
+
+- File with edge information.
+
+- Number of edges.
+
+- File with node information.
+
+- Number of nodes.
+
+- Max x coordinate.
+
+- Max y coordinate.
+
+- Output filename.
+
+- Start node.
+
+- End node.
 
 **Description of tests:**
 
