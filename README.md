@@ -77,7 +77,7 @@ To run Graphing on any data (outpust the png file with a drawing), using command
 
 - Output filename.
 
-To run Graphing with Dijkstra's Algorithm on any data (Prints the path to the console in terms of nodes and paints the path on the map), using command line type: ./program "Graph Map". There will then be a prompt to input the following information:
+To run Graphing with Dijkstra's Algorithm on any data (Prints the path to the console in terms of nodes and paints the path on the map), using command line type: ./program "Graph Dijkstra Path". There will then be a prompt to input the following information:
 
 - File with edge information.
 
