@@ -13,7 +13,7 @@ Code for the Dijkstra's algorithm: dijkstra.cpp
 
 Code for the graphing algorithm: Graphing.cpp
 
-Code that contains the tests for the algorithms: main.cpp
+Code that contains the tests for the algorithms for both tests and running the code on any dataset: tests/test.cpp
 
 Input files used in the tests: data_E_test.txt, data_E_test_2.txt, data_E_test_empty.txt, data_N_test.txt, data_N_test_2.txt, data_N_test_empty.txt  
 
