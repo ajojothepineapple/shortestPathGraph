@@ -33,8 +33,8 @@ void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filen
         if (dist_x==0){                                                         //If distance x is 0, only consider distance y and paint the corresponding vertical line in red.
             for (int k=0; k < abs(dist_y); k++){
                 output.getPixel(curr_x, curr_y) = cs225::HSLAPixel(0, 0, 0);
-                if(curr_x < (int)(x_size-1))
-                output.getPixel(curr_x+1, curr_y) = cs225::HSLAPixel(0, 0, 0);
+                if(curr_x < (int)(x_size-1))                                    //Paint the pixel directly left and right from the current pixel if the said pixels are not outside the image.
+                output.getPixel(curr_x+1, curr_y) = cs225::HSLAPixel(0, 0, 0); 
                 if(curr_x > 0)
                 output.getPixel(curr_x-1, curr_y) = cs225::HSLAPixel(0, 0, 0);
                 curr_y=curr_y+b;
@@ -43,7 +43,7 @@ void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filen
         else if (dist_y==0){
             for (int k=0; k < abs(dist_x); k++){                                //If distance y is 0, only consider distance y and paint the corresponding horizontal line in red.
                 output.getPixel(curr_x, curr_y)=cs225::HSLAPixel(0, 0, 0);
-                if(curr_y < (int)(y_size-1))
+                if(curr_y < (int)(y_size-1))                                    //Paint the pixel directly up and down from the current pixel if the said pixels are not outside the image.
                 output.getPixel(curr_x, curr_y+1)=cs225::HSLAPixel(0, 0, 0);
                 if(curr_y > 0)
                 output.getPixel(curr_x, curr_y-1)=cs225::HSLAPixel(0, 0, 0);
@@ -151,7 +151,7 @@ void Graph::Graphing_With_Path(std::vector<int> nodes_to_connect, std::string fi
         if (dist_x==0){                                                         //If distance x is 0, only consider distance y and paint the corresponding vertical line in blue.
             for (int k=0; k < abs(dist_y); k++){
                 output_.getPixel(curr_x, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
-                if (curr_x < (x_size_-1)){
+                if (curr_x < (x_size_-1)){                                      //Paint the pixel directly left and right from the current pixel if the said pixels are not outside the image.
                 output_.getPixel(curr_x+1, curr_y)=cs225::HSLAPixel(0, 1, 0.5);}
                 if (curr_x > 0){
                 output_.getPixel(curr_x-1, curr_y)=cs225::HSLAPixel(0, 1, 0.5);}
@@ -161,7 +161,7 @@ void Graph::Graphing_With_Path(std::vector<int> nodes_to_connect, std::string fi
         else if (dist_y==0){
             for (int k=0; k < abs(dist_x); k++){                                //If distance y is 0, only consider distance y and paint the corresponding horizontal line in red.
                 output_.getPixel(curr_x, curr_y)=cs225::HSLAPixel(0, 1, 0.5);
-                if (curr_y < (y_size_-1)){
+                if (curr_y < (y_size_-1)){                                          //Paint the pixel directly up and down from the current pixel if the said pixels are not outside the image.
                 output_.getPixel(curr_x, curr_y+1)=cs225::HSLAPixel(0, 1, 0.5);}
                 if (curr_y>0){
                output_.getPixel(curr_x, curr_y-1)=cs225::HSLAPixel(0, 1, 0.5);}
