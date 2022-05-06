@@ -110,8 +110,9 @@ int main(){
         }
         std::cout<<"\n";
     }*/
-    std::vector<int> testvector = l.dijkstra(0,1000);
+    std::vector<int> testvector = l.dijkstra(0,61);
     std::cout<<l.dist_<<std::endl;
-
+    for(size_t i= 0; i<testvector.size(); i++)
+    std::cout<<"Node: "<<testvector[i]<<std::endl;
     return 0;
 }

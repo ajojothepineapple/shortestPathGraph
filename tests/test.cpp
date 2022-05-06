@@ -126,7 +126,7 @@ std::cout << "Your filename is: " << x; // Display the input value
 }
 
 
-    TEST_CASE("dik any", "[weight=3][part=2]")
+    TEST_CASE("dik any", "[weight=3][part=1]")
 { 
         std::string file1; 
     std::cout << "Type Edge file name: "; // Type a string and press enter
@@ -186,6 +186,38 @@ std::cout << "Your filename is: " << x; // Display the input value
 
 }
 
+TEST_CASE("dijkstra dist test", "[weight=3][part=1]")
+{ 
+    Graph l;
+    l.graph = {{0,6,5,3,100,100},
+               {6,0,100,100,1,1},
+               {5,100,0,100,100,3},
+               {3,100,100,0,3,100},
+               {100,1,100,3,0,100},
+               {100,1,3,100,100,0}};
+
+    std::vector<int> dik = l.dijkstra(0,5);
+    REQUIRE(l.dist_ == 7);
+
+       
+}    
+
+TEST_CASE("dijkstra path test", "[weight=3][part=1]")
+{ 
+    Graph l;
+    l.graph = {{0,6,5,3,100,100},
+               {6,0,100,100,1,1},
+               {5,100,0,100,100,3},
+               {3,100,100,0,3,100},
+               {100,1,100,3,0,100},
+               {100,1,3,100,100,0}};
+    
+    std::vector<int> dik = l.dijkstra(0,5);
+    std::vector<int> sol = {0,1,5};
+    REQUIRE(dik == sol);
+
+       
+}    
 
 
 /*****************
@@ -291,3 +323,5 @@ actual datset tests
 
     l.Graphing(10001, 10001, "output.png");   
 }                              //Graphing algorithm on the target dataset
+
+

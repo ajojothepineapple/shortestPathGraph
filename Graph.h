@@ -60,8 +60,8 @@ class Graph{
     std::vector<Edge> Edges;
     std::vector<Node> Nodes;
     std::vector<int> Traversal;
-    unsigned int x_size_;
-    unsigned int y_size_;
+    int x_size_;
+    int y_size_;
     cs225::PNG output_;
     std::vector<std::vector<int>> graph;
    void adjbuilder();
