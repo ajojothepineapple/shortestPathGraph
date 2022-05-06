@@ -39,7 +39,7 @@ To run the tests and the algorithms on the target dataset in main.cpp:
 
 To run finding shortest path and graphically outputting it to the wanted file:
   - To compile type make program in the command line.
-  - Then to run type "./program "dik any""in the command line. Note: to run full need 7 GB mem allocation in Docker
+  - Then to run type "./program "dik any""in the command line.
   - You will then get the following prompts (to run the target data type the following in []):
   - Type Edge file name: [data_E.txt]
   - Type Edge number: [7035]
