@@ -17,7 +17,7 @@ Code that contains the tests for the algorithms for both tests and running the c
 
 Input files used in the tests: data_E_test.txt, data_E_test_2.txt, data_E_test_empty.txt, data_N_test.txt, data_N_test_2.txt, data_N_test_empty.txt  
 
-Output files used in the tests (see results.md for more detail): output_test.png, output_test_path.png
+Output files used in the tests: output_test.png, output_test_path.png
 
 Data of the chosen dataset: data_E.txt, data_N_test.txt
 
