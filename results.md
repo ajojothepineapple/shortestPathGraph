@@ -51,7 +51,6 @@ Graphing with Path:
 - Output: PNG with the path highligted in blue on the map done by graphing.
 
 - Running Time: (x = x-dimension of the picture, y = y-dimension of the picture) O(m * sqrt(x^2+y^2) + n), as for every edge might be included in the path and for every edge the largest distance that can be drawn is between is from one corner of the picture to the other, which is the diagonal of the pictrue denoted by x and y dimensions and every node is repainted again as it might be ovewritten when painting the paths.
-
 **Description of tests in test.cpp:**
 
 **Data Correction and Error Detection** (Uses "data_E_test_empty.txt" and "data_N_test_empty.txt" files as inputs)
@@ -80,9 +79,9 @@ Test 9: Testing whether the information for the y coordinates is correct for one
 
 Test 10: Checks for the correct number of nodes for the traversal. If incorrect, the Catch test will display the value that is there instead on the left of the equals sign.
 
-Test 11: Checks whether any of the nodes are repeating in the traversal. If that is the case, then the function prints fail.
+Test 11: Checks whether any of the nodes are repeating in the traversal. If that is the case, then the function fails.
 
-Test 12: Looking at the dataset for the test the traversal should be in the following order (By NodeIDs): 0-1-2-3-4-7-5-6. If that is not the case then the test prints out "Fail"
+Test 12: Looking at the dataset for the test the traversal should be in the following order (By NodeIDs): 0-1-2-3-4-7-5-6. If that is not the case then the test will fail.
 
 **Graphing Algorithm** (Uses "data_E_test_2.txt" and "data_N_test_2.txt")
 
@@ -90,18 +89,18 @@ Test 13: Should basically paint a "wheel" graph where there is a node in the mid
 
 Test 14: Should paint the path on top of the map done in Test 14 in blue, which is basically goes as follows: Center node - Most Southern Node - Node to immediately to the West of the most Southern Node - Center Node - Most Western Node - Node The the South of the Most Western Node - Node to the South of the Previous Node - Center Node. The output is written to "output_test_path.png" and needs visual confirmation as a test.
 
-**Running on the target dataset in main.cpp**
+**Running on the target dataset in test.cpp**
 
 - DFS Traversal: Looking at the Edges file and considering that the DFS starts at 0 node, the first 10 nodes in the traversal should be 0-2-5-7-11-37-50-59-63-61, therefore when running the code in the main.cpp, that string of numbers will be the output after the tests. (See README.md to run the code)
 
-- Graphing algorithm: See "output.png" on the map of roads that was graphed as the result of the algorithm.
+- Graphing algorithm: See "output.png" on the map of roads that was graphed as the result of the algorithm. (See README.md to run the code)
 
-- Djikstra's algorithm/Graphing with path: See "" to see the path of Dijkstra's algorithm mapped on the graph from "output.png"
+- Djikstra's algorithm/Graphing with path: See "outD.png" to see the path of Dijkstra's algorithm mapped on the graph from "output.png" for path from node 0 to 61.
 
 **Answers to the leading questions**
 
 - We believe we have achieved our aim as our algorithm does output the requred path provided by the Djikstra's algorithm correctly according to the tests and Djikstra's algorithm can output the correct path if we output the path to the console.
 
-- We are also able to graphically represent out nodes and edges and if are able to highlight the path on the graphed map as well. (see "Graph Target Dataset" in README and outD.png as an example of running Graphing with Path on the target dataset from node 0 to 61)
+- We are also able to graphically represent out nodes and edges and if are able to highlight the path on the graphed map as well.
 
-- We are also able to run DFS traversal on our algorithm, which can output of vector of nodes by their IDs if needed. (see "DFS on the Actual Dataset Demo" in README)
+- We are also able to run DFS traversal on our algorithm, which can output of vector of nodes by their IDs if needed. 
