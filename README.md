@@ -1,6 +1,5 @@
 # README
-**Video:**
-https://drive.google.com/file/d/1BaJNhO074RKAKUmLzznXtnjNh0gTz6DP/view
+**WARNING: The EWS is only able to run the tests we have provided, in order to run the code on the full dataset, docker memory has to be increased to 7.00 GB**
 
 **Files and Deliverables Organisation:**
 
@@ -29,6 +28,8 @@ Project Proposal: Project_Proposal.md
 Weekly Progress Log: Weekly_Progress_Log.md
 
 Final Report: results.md
+
+Presentation Video: https://drive.google.com/file/d/1BaJNhO074RKAKUmLzznXtnjNh0gTz6DP/view
 
 **Running the Code:**
 
