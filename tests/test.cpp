@@ -9,71 +9,52 @@
 #include "../dijkstra.cpp"
 //More details about the tests in the results.md
 
-    TEST_CASE("parse small empty", "[weight=3][part=1]")
+    TEST_CASE("Data Correction and Error Detection Tests", "[weight=3][part=1]")
 {
-    Graph e;                                        //Tests for Data Correction and Error Detection
+    Graph e;                                        
     e.parseE("data_E_test_empty.txt", 5);           //Test 1
-    e.parseN("data_N_test_empty.txt", 5); 
-    //REQUIRE(true);          //Test 2
+    e.parseN("data_N_test_empty.txt", 5);          //Test 2
 }
 
 
-    TEST_CASE("Data Correctness pt 3", "[weight=3][part=1]")
+    TEST_CASE("Data Correctness Test Pt 1", "[weight=3][part=1]")
 { 
     Graph g;
-    g.parseE("data_E_test.txt", 9); //for following tests                              
-    REQUIRE(g.Edges[5].startNodeID_ == 3);     //Tests for Data Correctness
-    if(g.Edges[5].startNodeID_ != 3){FAIL(g.Edges[5].startNodeID_);}              //Test 3
+    g.parseE("data_E_test.txt", 9);                            
+    REQUIRE(g.Edges[5].startNodeID_ == 3);          //Test 3                    
+    REQUIRE(g.Edges[8].edgeID_ == 8);          //Test 4 
+    REQUIRE(g.Edges[0].endNodeID_ == 1);          //Test 5 
+    REQUIRE(g.Edges[3].L2D_ == 3);          //Test 6 
+
 }
 
-    TEST_CASE("Data Correctness pt 4", "[weight=3][part=1]")
+    TEST_CASE("Data Correctness Test Pt 2", "[weight=3][part=1]")
 {             
     Graph g;
-    g.parseE("data_E_test.txt", 9); //for following tests 
-    REQUIRE(g.Edges[6].startNodeID_ == 1);   //Test 4
-    if(g.Edges[6].startNodeID_ != 1){FAIL(g.Edges[6].startNodeID_);}                
-}
-
-    TEST_CASE("Data Correctness pt 8", "[weight=3][part=1]")
-{             
-    Graph g;
-    g.parseN("data_N_test.txt", 8);
-    REQUIRE(g.Nodes[7].nodeID_ == 7);   //Test 8
-    if(g.Nodes[7].nodeID_ != 7){FAIL(g.Nodes[7].nodeID_);}                
-}
-
-    TEST_CASE("Data Correctness pt 9", "[weight=3][part=1]")
-{             
-    Graph g;
-    g.parseN("data_N_test.txt", 8);
-    REQUIRE(g.Nodes[4].nodeID_ == 4);   //Test 9
-    if(g.Nodes[4].nodeID_ != 4){FAIL(g.Nodes[4].nodeID_);}               
+    g.parseN("data_N_test.txt", 8);                            
+    REQUIRE(g.Nodes[7].nodeID_ == 7);          //Test 7                    
+    REQUIRE(g.Nodes[4].x_ == 4);          //Test 8 
+    REQUIRE(g.Nodes[3].y_ == 3);          //Test 9 
 }
 
 
-
-    TEST_CASE("DFS Traversal size", "[weight=3][part=1]")
+    TEST_CASE("DFS Traversal Size Test", "[weight=3][part=1]")
 {  
     Graph g;
-    
-std::string x; 
-std::cout << "Type file name: "; // Type a number and press enter
-std::cin >> x; // Get user input from the keyboard
-std::cout << "Your filename is: " << x; // Display the input value
 
     g.parseN("data_N_test.txt", 8);
-    g.parseE("data_E_test.txt", 9); //for following tests            
- std::vector<int> traversal = g.DFS();                               //Tests for DFS Traversal
-    REQUIRE(traversal.size() == 8);           //Test 11
+    g.parseE("data_E_test.txt", 9);            
+ std::vector<int> traversal = g.DFS();                               
+    REQUIRE(traversal.size() == 8);           //Test 10
 
-    std::vector<bool> traversal_size_check;                             //Test 12
+    std::vector<bool> traversal_size_check;                             //Test 11
     for (unsigned int i = 0; i < traversal.size(); i++){
         traversal_size_check.push_back(0);
     }
 
     for (unsigned int j = 0; j < traversal.size(); j++){
         if (traversal_size_check[traversal[j]]==1){
-            FAIL("failed size check");
+            FAIL("Failed Size Check");
             break;
         }
         traversal_size_check[traversal[j]]=1;
@@ -82,13 +63,13 @@ std::cout << "Your filename is: " << x; // Display the input value
 }
 
 
-    TEST_CASE("DFS Traversal node check", "[weight=3][part=1]")
+    TEST_CASE("DFS Traversal Node Order Test", "[weight=3][part=1]")
 { 
     Graph g;
     g.parseN("data_N_test.txt", 8);
-    g.parseE("data_E_test.txt", 9); //for following tests            
+    g.parseE("data_E_test.txt", 9);            
  std::vector<int> traversal = g.DFS(); 
-    std::vector<int> traversal_node_check;                              //Test 13
+    std::vector<int> traversal_node_check;                              //Test 12
     traversal_node_check.push_back(0);
     traversal_node_check.push_back(1);
     traversal_node_check.push_back(2);
@@ -99,21 +80,21 @@ std::cout << "Your filename is: " << x; // Display the input value
     traversal_node_check.push_back(6);
     for (unsigned int k = 0; k < traversal.size(); k++){
         if (traversal_node_check[k] != traversal[k]){
-            FAIL("failed node check");
+            FAIL("Failed Node Order");
         }   
     }
 
 }
 
 
-    TEST_CASE("Graph algo Check", "[weight=3][part=1]")
+    TEST_CASE("Graphing Algorithm Test", "[weight=3][part=1]")
 { 
-    Graph k;                                                                //Tests for the graphing algorithm
-    k.parseE("data_E_test_2.txt", 32);                                      //Test 14
+    Graph k;                                                                
+    k.parseE("data_E_test_2.txt", 32);                                      //Test 13
     k.parseN("data_N_test_2.txt", 17); 
     k.Graphing(70, 70, "output_test.png");
 
-    std::vector<int> graphing_path_node_check;                              //Test 15
+    std::vector<int> graphing_path_node_check;                              //Test 14
     graphing_path_node_check.push_back(0);
     graphing_path_node_check.push_back(1);
     graphing_path_node_check.push_back(9);
@@ -126,7 +107,7 @@ std::cout << "Your filename is: " << x; // Display the input value
 }
 
 
-    TEST_CASE("dik any", "[weight=3][part=1]")
+    TEST_CASE("Graph Dijkstra Path", "[weight=3][part=1]")
 { 
         std::string file1; 
     std::cout << "Type Edge file name: "; // Type a string and press enter
@@ -166,7 +147,6 @@ std::cout << "Your filename is: " << x; // Display the input value
     l.parseE(file1, edgeNum); 
     l.parseN(file2, nodeNum);
     l.adjbuilder();
-                                                                  //Actual target dataset operations
     int root;
     std::cout << "start node: "; // Type a string and press enter
     std::cin >> root; // Get user input from the keyboard
@@ -176,10 +156,10 @@ std::cout << "Your filename is: " << x; // Display the input value
     std::cin >> dest; // Get user input from the keyboard
 
     std::vector<int> dik = l.dijkstra(root, dest);
-    l.Graphing(mX+5,mY+5, outputFileName); 
+    l.Graphing(mX+5,mY+5, outputFileName);          //First graph the map and then the path on it
     l.Graphing_With_Path(dik, outputFileName);
 
-    std::cout<<"Dijkstra's path: "<<std::endl;
+    std::cout<<"Dijkstra's path: "<<std::endl;      //Output the path to the console
     for(unsigned i = 0; i<dik.size(); i++){
         std::cout<<dik[i]<<std::endl;
     }
@@ -219,11 +199,7 @@ TEST_CASE("dijkstra path test", "[weight=3][part=1]")
        
 }    
 
-
-/*****************
-actual datset tests
-******************/
-   TEST_CASE("run DFS", "[weight=3][part=2]")
+   TEST_CASE("Run DFS", "[weight=3][part=2]")
 {
     std::string file1; 
     std::cout << "Type Edge file name: "; // Type a string and press enter
@@ -246,15 +222,14 @@ actual datset tests
     Graph l;
     l.parseE(file1, edgeNum); 
     l.parseN(file2, nodeNum);
-    std::vector<int> DFS_vector = l.DFS(); 
-                                                  //DFS Traversal on the target dataset 
+    std::vector<int> DFS_vector = l.DFS(); //Run DFS on the dataset and output the result to teh console
     for(unsigned i = 0; i<DFS_vector.size(); i++){
         std::cout<<DFS_vector[i]<<std::endl;
     }
 
 }
 
-    TEST_CASE("run DFS on actual datset", "[weight=3][part=2]")
+    TEST_CASE("DFS on the Actual Dataset Demo", "[weight=3][part=2]")
 {   Graph l;
     l.parseE("data_E.txt", 7035); 
     l.parseN("data_N.txt", 6105);
@@ -270,7 +245,7 @@ actual datset tests
     std::cout<<DFS_vector[8]<<std::endl;
     std::cout<<DFS_vector[9]<<std::endl;
 }
-    TEST_CASE("graph any", "[weight=3][part=2]")
+    TEST_CASE("Graph Map", "[weight=3][part=2]")
 { 
     std::string file1; 
     std::cout << "Type Edge file name: "; // Type a string and press enter
@@ -309,19 +284,19 @@ actual datset tests
     Graph l;
     l.parseE(file1, edgeNum); 
     l.parseN(file2, nodeNum);
-    std::vector<int> DFS_vector = l.DFS();                                                                //Actual target dataset operations
+    std::vector<int> DFS_vector = l.DFS();                                                               
 
-    l.Graphing(mX+1,mY+1, outputFileName);   
+    l.Graphing(mX+1,mY+1, outputFileName);      //Graph the map
 }   
 
-    TEST_CASE("run actual dataset", "[weight=3][part=2]")
+    TEST_CASE("Graph Target Dataset", "[weight=3][part=2]")
 { 
     Graph l;
-    l.parseE("data_E.txt", 7035); 
+    l.parseE("data_E.txt", 7035);                   //Graph the target dataset
     l.parseN("data_N.txt", 6105);
-    std::vector<int> DFS_vector = l.DFS();                                                                //Actual target dataset operations
+    std::vector<int> DFS_vector = l.DFS();                                                                
 
     l.Graphing(10001, 10001, "output.png");   
-}                              //Graphing algorithm on the target dataset
+}                              
 
 

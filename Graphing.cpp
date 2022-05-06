@@ -4,7 +4,7 @@
 #include <cstdlib>
 /*
     The following function paints the nodes and edges on the map based on the nodes' positions.
-    Input: X and Y dimensions of the painting (Set based on the coordinate limits of the dataset), filename of the PNG file to which the output is written, Nodes and Edges of the graph.
+    Input: X and Y dimensions of the painting (Set based on the coordinate limits of the dataset (It is often the max seen coordinate + 1)), filename of the PNG file to which the output is written, Nodes and Edges of the graph.
     Output: PNG file with graphical representation of the output.
 */
 void Graph::Graphing(unsigned int x_size, unsigned int y_size, std::string filename){
