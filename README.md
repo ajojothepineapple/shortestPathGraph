@@ -47,7 +47,7 @@ Tests:
 
 - To run Tests 12, using command line type: ./program "DFS Traversal Node Order Test"
 
-- To run Tests 12 and 14, using command line type: ./program "Graphing Algorithm Test"
+- To run Tests 13 and 14, using command line type: ./program "Graphing Algorithm Test"
 
 Running algorithms for general use (the target dataset is in data_E.txt (Edges) and data_N.txt (Nodes)):
 
