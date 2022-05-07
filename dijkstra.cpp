@@ -1,54 +1,23 @@
 #include "Graph.h"
 #include <vector>
 
-/*
-Qualities:
-
-Shortest Path Tree Set: keeps track of verticies included in the shortest path tree
-whose minimum distance from the root is calculated and finalized. Starts empty.
-
-Assign a distance value to all verticies of the input graph. All distances are
-initialized to infinity. Assign distance of the root to 0 first.
-
-while Shortest Path Tree Set doesn't include all vertices:
-	-Pick a vertex u which is not there in the set and has a min distance value
-	-Add u to the spt set
-	-Update the distance value of all adjacent vertices to u. To update the distance
-	 values, iterate through all adjacent vertices. For every adjacent vertex v, if
-	 the sum of distance value of u (from source) and weight of edge u-v, is less
-	 than the distance value of v, then update the distance value of v. 
-
-
-
-
-NOTES: int root is representing a node, which in this scenario are indexed with ints.
-Root is the index of the starting node.
-Some code that isn't complete because it uses helper functions. Also it is specifically
-intended to be used with a graph stored as an adjacency matrix:
-*/
-
-//V is the number of vertices in the graph. 
-//Define V as a global variable and initialize it in parser.
-
 std::vector<int> Graph::dijkstra(int root, int dest){
 
 int V_ = graph.size();
 int V= V_;
 std::vector<int> parent; //contains the indices of the nodes on the shortest path
 for(int i=0; i<V; i++){
-    parent.push_back(0);
+    parent.push_back(0); //all parents start at zero...
 }
-parent[root] = -1;
+parent[root] = -1; //except the root, which has no parent in the shortest path tree
 std::vector<int> dist; //holds the shortest distance from root to i. dist[dest] is what we are looking for
 dist.resize(V);
-std::vector<int> solution;
+std::vector<int> solution; //our output
 
 
 std::vector<bool> sptSet = {false};
-sptSet.resize(V);
-/*for(size_t i = 0; i < sptSet.size(); i++){
-    std::cout<<sptSet[i] << std::endl;
-}*/
+sptSet.resize(V); //set of vertices in the shortest path tree
+
 
 for(int i = 0; i<V; i++){
 dist[i] = 2147483647; 
@@ -57,31 +26,22 @@ dist[i] = 2147483647;
 dist[root] = 0;
 
 for(int count = 0; count < V-1; count++){
+int u = minDistance(dist, sptSet, V); //returns the unprocessed node index with the least distance between it and processed nodes
+sptSet[u] = true; //mark the node from mindist as processed
 
-// Pick the minimum distance vertex from the set of vertices not
-// yet processed. u is always equal to root in the first iteration.
-int u = minDistance(dist, sptSet, V);
-
-
-//mark vertex as processed
-sptSet[u] = true;
-
-//update dist value of the adjacent vertices of the picked vertex
+//loop through adjacent nodes and update dists
 for(int v = 0; v<V; v++){
-
-// Update dist[v] only if is not in sptSet, there is an edge from
-// u to v, and total weight of path from root to  v through u is
-// smaller than current value of dist[v]
+//update dist if not processed, there exists an edge from u to v, and the new dist is smaller than the curr dist
 if (!sptSet[v] && graph[u][v] && dist[u] + graph[u][v] < dist[v]) {
-            parent[v] = u;
-            dist[v] = dist[u] + graph[u][v];
+            parent[v] = u; //set parent to backtrack later
+            dist[v] = dist[u] + graph[u][v]; //update dist
         }
 }
     
 }
-solution.push_back(root);
-getPath(parent, dest, solution);
-dist_ = dist[dest]; //private variable for distance since we can't return more than one variable here
+solution.push_back(root);//every path begins at the root
+getPath(parent, dest, solution); //recursively backtracks and returns the solution path
+dist_ = dist[dest]; //private variable for distance since we can't return an int in this function
 return solution;
 
 
@@ -91,10 +51,11 @@ return solution;
 int Graph::minDistance(std::vector<int> dist, std::vector<bool> sptSet, int V)
 {
    
-   // Initialize min value
-    int min = 1147483647;
+    int min = 1147483647; //initialize min to be an arbitrarily large value, larger than any weight in our data
     int min_index = 0;
+    //loop through all the vertices
     for (int v = 0; v < V; v++)
+        //if not processed and dist is smaller than min
         if (sptSet[v] == false && dist[v] <= min){
             min = dist[v];
             min_index = v;
@@ -103,18 +64,13 @@ int Graph::minDistance(std::vector<int> dist, std::vector<bool> sptSet, int V)
     return min_index;
 }
 
-//This one I'm not so sure about, the recursion started to confuse me
 void Graph::getPath(std::vector<int> &parent, int j, std::vector<int> &path)
 {
-     //std::cout<<j<< " " << parent.size()<< std::endl;
-     // Base Case : If j is source
+     //return at the base case where j is the root index
     if (parent[j] == -1)
         return;
     
-    getPath(parent, parent[j], path);
-    path.push_back(j);
-    //std::cout<<parent.size()<<std::endl;
+    getPath(parent, parent[j], path);//recursive backtracing call
+    path.push_back(j);//pushes back the path in order from just after root to destination
     
-
-    //cout << j << " ";
 }
