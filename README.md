@@ -37,44 +37,45 @@ First compile the program, using command line by running: make program
 
 Tests:
 
-- To run Tests 1 and 2, using command line type: ./program [Data Correction and Error Detection Tests]
+- To run Tests 1 and 2, using command line type: ./program "Data Correction and Error Detection Tests"
 
-- To run Tests 3, 4, 5 and 6, using command line type: ./program [Data Correctness Test Pt 1]
+- To run Tests 3, 4, 5 and 6, using command line type: ./program "Data Correctness Test Pt 1"
 
-- To run Tests 7, 8 and 9, using command line type: ./program [Data Correctness Test Pt 2]
+- To run Tests 7, 8 and 9, using command line type: ./program "Data Correctness Test Pt 2"
 
 - To run Tests 10 and 11, using command line type: ./program "DFS Traversal Size Test"
 
-- To run Tests 12, using command line type: ./program "DFS Traversal node check"
+- To run Tests 12, using command line type: ./program "DFS Traversal Node Order Test"
 
 - To run Tests 13 and 14, using command line type: ./program "Graphing Algorithm Test"
-- To run 15 and 16 using command line type: ./program [dijkstra]
+- Too run Test 15 type ./program "dijkstra dist test"
+- To run Test 16 type ./program "dijkstra path test"
 
 Running algorithms for general use (the target dataset is in data_E.txt (Edges) and data_N.txt (Nodes)):
 
-To run DFS traversal on any data (prints the traversal to the console), using command line type: ./program "Run DFS". There will then be a prompt to input the following information (If you want to run on actual dataset values in []):
+To run DFS traversal on any data (prints the traversal to the console), using command line type: ./program "Run DFS". There will then be a prompt to input the following information:
 
-- File with edge information.[data_E.txt]
+- File with edge information.
 
-- Number of edges.[7035]
+- Number of edges.
 
-- File with node information.[data_N.txt]
+- File with node information.
 
-- Number of nodes..[6105]
+- Number of nodes.
 
-To run Graphing on any data (outpust the png file with a drawing), using command line type: ./program "graph any". There will then be a prompt to input the following information (If you want to run on actual dataset values in []):
+To run Graphing on any data (outpust the png file with a drawing), using command line type: ./program "Graph Map". There will then be a prompt to input the following information:
 
-- File with edge information.[data_E.txt]
+- File with edge information.
 
-- Number of edges.[7035]
+- Number of edges.
 
-- File with node information.[data_N.txt]
+- File with node information.
 
-- Number of nodes.[6105]
+- Number of nodes.
 
-- Max x coordinate.[10000]
+- Max x coordinate.
 
-- Max y coordinate.[10000]
+- Max y coordinate.
 
 - Output filename.
 
@@ -98,7 +99,7 @@ To run Graphing with Dijkstra's Algorithm on any data (Prints the path to the co
 
 - End node.
 
-To run the DFS traversal on the target dataset, that prints the first 10 elements of traversal (see results.md for more info), using command line type: ./program "run DFS on actual datset"
+To run the DFS traversal on the target dataset, that prints the first 10 elements of traversal (see results.md for more info), using command line type: ./program "DFS on the Actual Dataset Demo"
 
 To run the Graphing on the Actual Dataset and write the result to output.png, using command line type: ./program "Graph Target Dataset"
 
