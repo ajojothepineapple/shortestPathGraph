@@ -48,7 +48,9 @@ Tests:
 - To run Tests 12, using command line type: ./program "DFS Traversal Node Order Test"
 
 - To run Tests 13 and 14, using command line type: ./program "Graphing Algorithm Test"
-- Too run Test 15 type ./program "dijkstra dist test"
+
+- To run Test 15 type ./program "dijkstra dist test"
+
 - To run Test 16 type ./program "dijkstra path test"
 
 Running algorithms for general use (the target dataset is in data_E.txt (Edges) and data_N.txt (Nodes)):
@@ -142,6 +144,7 @@ Test 13: Should basically paint a "wheel" graph where there is a node in the mid
 Test 14: Should paint the path on top of the map done in Test 14 in blue, which is basically goes as follows: Center node - Most Southern Node - Node to immediately to the West of the most Southern Node - Center Node - Most Western Node - Node The the South of the Most Western Node - Node to the South of the Previous Node - Center Node. The output is written to "output_test_path.png" and needs visual confirmation as a test.
 
 **Dijkstra**
-Test 15: checks that shortest distance is 7 on specified 6 node graph. 
 
-Test 16: checks the that the algorithm returns the correct shortest path nodes on the same adjacency matrix as above.
+Test 15: Checks that shortest distance is 7 on specified 6 node graph. 
+
+Test 16: Checks the that the algorithm returns the correct shortest path nodes on the same adjacency matrix as above.
