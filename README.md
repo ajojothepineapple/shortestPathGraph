@@ -37,43 +37,44 @@ First compile the program, using command line by running: make program
 
 Tests:
 
-- To run Tests 1 and 2, using command line type: ./program "Data Correction and Error Detection Tests"
+- To run Tests 1 and 2, using command line type: ./program [Data Correction and Error Detection Tests]
 
-- To run Tests 3, 4, 5 and 6, using command line type: ./program "Data Correctness Test Pt 1"
+- To run Tests 3, 4, 5 and 6, using command line type: ./program [Data Correctness Test Pt 1]
 
-- To run Tests 7, 8 and 9, using command line type: ./program "Data Correctness Test Pt 2"
+- To run Tests 7, 8 and 9, using command line type: ./program [Data Correctness Test Pt 2]
 
 - To run Tests 10 and 11, using command line type: ./program "DFS Traversal Size Test"
 
-- To run Tests 12, using command line type: ./program "DFS Traversal Node Order Test"
+- To run Tests 12, using command line type: ./program "DFS Traversal node check"
 
 - To run Tests 13 and 14, using command line type: ./program "Graphing Algorithm Test"
+- To run 15 and 16 using command line type: ./program [dijkstra]
 
 Running algorithms for general use (the target dataset is in data_E.txt (Edges) and data_N.txt (Nodes)):
 
-To run DFS traversal on any data (prints the traversal to the console), using command line type: ./program "Run DFS". There will then be a prompt to input the following information:
+To run DFS traversal on any data (prints the traversal to the console), using command line type: ./program "Run DFS". There will then be a prompt to input the following information (If you want to run on actual dataset values in []):
 
-- File with edge information.
+- File with edge information.[data_E.txt]
 
-- Number of edges.
+- Number of edges.[7035]
 
-- File with node information.
+- File with node information.[data_N.txt]
 
-- Number of nodes.
+- Number of nodes..[6105]
 
-To run Graphing on any data (outpust the png file with a drawing), using command line type: ./program "Graph Map". There will then be a prompt to input the following information:
+To run Graphing on any data (outpust the png file with a drawing), using command line type: ./program "graph any". There will then be a prompt to input the following information (If you want to run on actual dataset values in []):
 
-- File with edge information.
+- File with edge information.[data_E.txt]
 
-- Number of edges.
+- Number of edges.[7035]
 
-- File with node information.
+- File with node information.[data_N.txt]
 
-- Number of nodes.
+- Number of nodes.[6105]
 
-- Max x coordinate.
+- Max x coordinate.[10000]
 
-- Max y coordinate.
+- Max y coordinate.[10000]
 
 - Output filename.
 
@@ -97,7 +98,7 @@ To run Graphing with Dijkstra's Algorithm on any data (Prints the path to the co
 
 - End node.
 
-To run the DFS traversal on the target dataset, that prints the first 10 elements of traversal (see results.md for more info), using command line type: ./program "DFS on the Actual Dataset Demo"
+To run the DFS traversal on the target dataset, that prints the first 10 elements of traversal (see results.md for more info), using command line type: ./program "run DFS on actual datset"
 
 To run the Graphing on the Actual Dataset and write the result to output.png, using command line type: ./program "Graph Target Dataset"
 
@@ -138,3 +139,8 @@ Test 12: Looking at the dataset for the test the traversal should be in the foll
 Test 13: Should basically paint a "wheel" graph where there is a node in the middle of the picture, which connects to all the other nodes, which are connected in the cycle. The output is written to "output_test.png" and needs visual confirmation as a test.
 
 Test 14: Should paint the path on top of the map done in Test 14 in blue, which is basically goes as follows: Center node - Most Southern Node - Node to immediately to the West of the most Southern Node - Center Node - Most Western Node - Node The the South of the Most Western Node - Node to the South of the Previous Node - Center Node. The output is written to "output_test_path.png" and needs visual confirmation as a test.
+
+**Dijkstra**
+Test 15: checks that shortest distance is 7 on specified 6 node graph. 
+
+Test 16: checks the that the algorithm returns the correct shortest path nodes on the same adjacency matrix as above.
