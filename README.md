@@ -29,8 +29,6 @@ Weekly Progress Log: Weekly_Progress_Log.md
 
 Final Report: results.md
 
-Presentation Video: https://drive.google.com/file/d/1BaJNhO074RKAKUmLzznXtnjNh0gTz6DP/view
-
 **Running the Code:**
 
 First compile the program, using command line by running: make program
